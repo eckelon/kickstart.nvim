@@ -3,14 +3,16 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-	{ "catppuccin/nvim", name = "catppuccin" },
-	{ "klen/nvim-test",
+	{ "catppuccin/nvim",    name = "catppuccin", priority = 1000 },
+	{
+		"klen/nvim-test",
 		name = "nvim-test",
-		ft="python",
+		ft = "python",
 		config = function()
 			require('nvim-test').setup {}
 		end
 	},
 	require 'kickstart.plugins.autoformat',
 	require 'kickstart.plugins.debug',
+	{ "github/copilot.vim", name = "copilot.vim" },
 }
